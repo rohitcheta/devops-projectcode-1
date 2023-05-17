@@ -1,0 +1,16 @@
+pipepline{
+    agent any    //ansible on same server
+    stages{
+        stage('Clone the repo'){
+           steps{
+              git 'https://github.com/rohitcheta/devops-projectcode-1.git'
+           } 
+           
+        }
+        stage('Execute playbook'){
+            steps{
+               ansiblePlaybook credentialsId: 'auth', disableHostKeyChecking: true, installation: 'myansible', inventory: 'hostnames.inv', playbook: 'ansibleplaybook.yml'
+            }
+        }
+    }
+}

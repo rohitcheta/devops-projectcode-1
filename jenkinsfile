@@ -1,4 +1,4 @@
-pipepline{
+pipeline{
     agent any    //ansible on same server
     stages{
         stage('Clone the repo'){

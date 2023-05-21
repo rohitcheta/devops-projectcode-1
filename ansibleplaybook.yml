@@ -18,7 +18,7 @@
      git:
       repo: https://github.com/rohitcheta/AnsibleDockerdemo.git
       dest: /tmp/myrepo
-   - name: build image from dcokerfile
+   - name: build image from dockerfile
      command: chdir=/tmp/myrepo docker build -t myansible .
    - name: deploy the image
      command: docker run -d -P myansible
